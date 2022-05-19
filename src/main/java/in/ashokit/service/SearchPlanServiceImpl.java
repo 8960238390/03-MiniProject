@@ -83,6 +83,9 @@ public class SearchPlanServiceImpl implements SearchPlanService {
 	
 	private boolean isSearchReqEmpty(SearchRequest searchRequest) {
 		
+		if(searchRequest == null) {
+			return true;
+		}
 		if(searchRequest.getPlanName()!=null && !searchRequest.getPlanName().equals(""))
 			return false;
 		

@@ -11,13 +11,11 @@ import in.ashokit.entity.EligibilityDetails;
 @Repository
 public interface SearchPlansRepo extends JpaRepository<EligibilityDetails, Integer>{
 
-	@Query(value="select DISTINCT PLAN_NAME from ELIGIBILITY_DTLS",nativeQuery = true)
+	//@Query(value="select DISTINCT PLAN_NAME from ELIGIBILITY_DTLS",nativeQuery = true)
+	@Query("select DISTINCT planName from EligibilityDetails")
 	public List<String> getPlanNames();
 	
-	@Query(value="select DISTINCT PLAN_STATUS from ELIGIBILITY_DTLS",nativeQuery = true)
+	@Query("select DISTINCT planName from EligibilityDetails")
 	public List<String> getPlanStatus();
-	
-	
-	
 	
 }
